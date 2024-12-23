@@ -5,7 +5,7 @@ import { useState } from 'react';
 export const TodoForm = ({addTodo}) => {
   const [task, setTask] = useState("")
 
-  const handleSubmit = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
     addTodo(task);
     setTask("")
@@ -13,7 +13,7 @@ export const TodoForm = ({addTodo}) => {
 
 
   return (
-    <form className="TodoForm" onSubmit={handleSubmit} > 
+    <form className="TodoForm" onSubmit={submitHandler} > 
       <input type="text" 
         value={task}
         className="todo-input" 

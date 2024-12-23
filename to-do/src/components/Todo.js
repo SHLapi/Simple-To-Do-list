@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { TodoWrapper } from './TodoWrapper'
 import React from 'react'
 
-export const Todo = ({task, completed}) => {
+export const Todo = ({task, completed, Delete, Edit}) => {
   return (
     <div className="Todo">
       <p onClick={() => completed(task.id)} 
@@ -13,8 +13,8 @@ export const Todo = ({task, completed}) => {
           {task.task}
       </p>
       <div>
-        <FontAwesomeIcon icon={faPenToSquare}/>
-        <FontAwesomeIcon icon={faTrash}/>
+        <FontAwesomeIcon icon={faPenToSquare} className='edit-icon' onClick={()=> Edit(task.id)} />
+        <FontAwesomeIcon icon={faTrash} onClick={()=>Delete(task.id)} className='delete-icon'/>
       </div>
     </div>
   )
