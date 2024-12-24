@@ -13,7 +13,6 @@ export const TodoWrapper = () =>
   
   const addTodo = (todo) => {
     setTodos ([...todos, {id: uuidv4(), task: todo, completed: false, isEditing: false}]) 
-    console.log(todos)
   }
   const taskCompleted = (id) => {
     setTodos(todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed } : todo))

@@ -1,19 +1,23 @@
 'use client'
 import { useState } from 'react';
+import { Alert } from '@mui/material';
 
 
 export const TodoForm = ({addTodo}) => {
   const [task, setTask] = useState("")
 
   const submitHandler = (e) => {
-    e.preventDefault();
-    addTodo(task);
-    setTask("")
+    task.length === 0 ? 
+    (alert("No task Entered"))
+    :
+    (e.preventDefault(),
+    addTodo(task),
+    setTask(""))
   }
 
 
   return (
-    <form className="TodoForm" onSubmit={submitHandler} > 
+    <form onSubmit={submitHandler} > 
       <input type="text" 
         value={task}
         className="todo-input" 
