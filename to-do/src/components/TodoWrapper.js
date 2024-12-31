@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TodoForm } from './TodoForm';
 import { Todo } from './Todo'
 import { v4 as uuidv4 } from 'uuid';
@@ -26,6 +26,17 @@ export const TodoWrapper = () =>
   const editTask = (task, id) => {
     setTodos(todos.map(todo => todo.id === id ? {...todo, task, isEditing: !todo.isEditing} : todo))
   }
+
+  useEffect(() => {
+    const savedTodos = localStorage.getItem('todos');
+    if (savedTodos) {
+      setTodos(JSON.parse(savedTodos));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <div className="TodoWrapper">

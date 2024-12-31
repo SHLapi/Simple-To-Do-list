@@ -1,6 +1,5 @@
 'use client'
 import { useState } from 'react';
-import { Alert } from '@mui/material';
 
 
 export const TodoForm = ({addTodo}) => {
@@ -8,7 +7,7 @@ export const TodoForm = ({addTodo}) => {
 
   const submitHandler = (e) => {
     task.length === 0 ? 
-    (alert("No task Entered"))
+    (alert("Please Enter a Task!"), e.preventDefault())
     :
     (e.preventDefault(),
     addTodo(task),
