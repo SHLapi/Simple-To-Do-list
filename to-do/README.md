@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## My To-Do App 🚀
+Welcome to my simple To-Do App! This project is a classic example of a web application built with React and Next.js to help you manage your daily tasks efficiently.
 
-## Getting Started
+## 🌟 Features
+**Create Tasks:** Easily add new tasks to your list.
 
-First, run the development server:
+**Mark as Completed:** Check off tasks as you finish them.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**Edit Tasks:** Made a typo? No problem! You can edit any existing task.
+
+**Delete Tasks:** Remove tasks you no longer need.
+
+**Persistence:** Your tasks are saved locally in your browser, so they're still there even if you close the tab.
+
+## 🛠️ Technologies Used
+`React:` For building the user interface.
+
+`Next.js:` A fantastic React framework that provides a great development experience.
+
+`Font Awesome:` For the sleek and functional icons.
+
+`uuid:` To generate unique IDs for each task, ensuring everything is tracked correctly.
+
+## 📝 How It Works
+The magic happens in TodoWrapper.js, which acts as the central hub for the application's state. It uses React's useState hook to manage the list of tasks and the useEffect hook to handle local storage, saving and loading your tasks automatically.
+
+`addTodo:` Adds a new task object to the todos array with a unique ID, the task text, and initial completed and isEditing states.
+
+`taskCompleted:` Toggles the completed status of a specific task based on its ID.
+
+`deleteTodo:` Removes a task from the todos array.
+
+`editTodo:` Toggles the isEditing status of a task, which controls whether the edit form is displayed.
+
+`editTask:` Updates the text of a task when you're done editing.
+
+## 🚀 Getting Started
+To get a copy of this project up and running on your local machine, follow these simple steps.
+
+**Prerequisites**
+You'll need to have Node.js installed on your computer.
+
+**Installation**
+Clone the repository:
+
+```Bash
+
+git clone https://github.com/SHLapi/Simple-To-Do-list.git
 ```
+Navigate to the project directory:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```Bash
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+cd to-do
+```
+Install the dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```Bash
 
-## Learn More
+npm install
+```
+Running the App
 
-To learn more about Next.js, take a look at the following resources:
+Start the development server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```Bash
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm run dev
+```
+Open your browser and visit ```http://localhost:3000``` to see the app in action!
