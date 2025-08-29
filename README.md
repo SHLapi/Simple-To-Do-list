@@ -47,12 +47,7 @@ Clone the repository:
 
 git clone https://github.com/SHLapi/Simple-To-Do-list.git
 ```
-Navigate to the project directory:
 
-```Bash
-
-cd to-do
-```
 Install the dependencies:
 
 ```Bash
