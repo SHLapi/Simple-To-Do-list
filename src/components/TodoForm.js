@@ -4,18 +4,20 @@ import { useState } from 'react';
 
 export const TodoForm = ({addTodo}) => {
   const [task, setTask] = useState("")
-
+  const alertMSG = document.querySelector(".alertMSG");
   const submitHandler = (e) => {
     task.length === 0 ? 
-    (alert("Please Enter a Task!"), e.preventDefault())
+    ( alertMSG.textContent = "Please Enter a Task!", e.preventDefault())
     :
     (e.preventDefault(),
+    alertMSG.textContent = "",
     addTodo(task),
     setTask(""))
   }
 
 
   return (
+    <>
     <form onSubmit={submitHandler} > 
       <input type="text" 
         value={task}
@@ -25,7 +27,8 @@ export const TodoForm = ({addTodo}) => {
       <button type="submit" className="todo-btn">
         Add Task
       </button>
+      <p className="alertMSG"></p>
     </form>
-
+    </>
   )
 }
