@@ -66,6 +66,10 @@ h1 {
 .fa-trash {
   margin-left: 1rem;
 }
+.fa-trash:hover {
+  color: #ff6b6b;
+  transform: scale(1.2);
+}
 
 .notCompleted {
   color: #fff;
@@ -81,6 +85,10 @@ h1 {
 .edit-icon,.delete-icon {
   cursor: pointer;
 }
+.edit-icon:hover {
+  transform: scale(1.2);
+}
+
 .alertMSG {
   color: red;
   font-weight: lighter;
